@@ -1,0 +1,14 @@
+{
+    "name": "@lore-builder/server",
+    "version": "0.0.0",
+    "type": "module",
+    "devDependencies": {
+        "@bleed-believer/path-alias": "^0.15.2",
+        "@types/express": "^4.17.20",
+        "@types/node": "^20.8.9",
+        "ava": "^5.3.1",
+        "nodemon": "^3.0.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    }
+}
