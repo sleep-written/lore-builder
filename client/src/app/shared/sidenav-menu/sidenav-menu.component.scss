@@ -1,0 +1,10 @@
+:host mat-nav-list {
+    padding: 0;
+}
+
+mat-list-item .content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}

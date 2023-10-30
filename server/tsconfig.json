@@ -4,6 +4,7 @@
         "module": "Node16",
         "moduleResolution": "Node16",
 
+        "strict": true,
         "verbatimModuleSyntax": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -14,9 +15,10 @@
 
         "baseUrl": "./src",
         "paths": {
-            "@entities/*": [ "./entities/*" ],
-            "@server/*": [ "./server/*" ],
-            "@tool/*": [ "./tool/*" ]
+            "@entities/*": ["./entities/*"],
+            "@server/*": ["./server/*"],
+            "@tool/*": ["./tool/*"],
+            "@/*": ["./*"]
         }
     }
 }
