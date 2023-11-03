@@ -28,11 +28,13 @@
                 </mat-form-field>
             </mat-grid-tile>
             
-            <mat-grid-tile FlexGridTile [mdCol]="4">
+            <mat-grid-tile FlexGridTile [mdCol]="4" [rowspan]="2">
                 <mat-form-field>
                     <mat-label>Description</mat-label>
                     <textarea matInput
-                    formControlName="description">
+                    formControlName="description"
+                    [rows]="6"
+                    [style.resize]="'none'">
                     </textarea>
 
                     <mat-hint>A description to attach into the character's tag</mat-hint>
@@ -41,4 +43,22 @@
             </mat-grid-tile>
         </mat-grid-list>
     </mat-dialog-content>
+        
+    <mat-dialog-actions>
+        <button mat-raised-button
+        type="submit"
+        color="warn"
+        [disabled]="this.form.invalid">
+            <mat-icon>save</mat-icon>
+            <span>Save</span>
+        </button>
+        
+        <button mat-raised-button
+        type="button"
+        color="primary"
+        (click)="this.close()">
+            <mat-icon>close</mat-icon>
+            <span>Close</span>
+        </button>
+    </mat-dialog-actions>
 </form>

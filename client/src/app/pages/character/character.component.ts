@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalCreateComponent } from './modal-create';
 import { firstValueFrom } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+
+import { ModalCreateComponent } from './modal-create';
 
 @Component({
   selector: 'app-character',
@@ -18,7 +19,9 @@ export class CharacterComponent {
   async addCharacter(): Promise<void> {
     const modal = this._dialog.open(ModalCreateComponent, {
       width: 'calc(100vw - 4rem)',
-      maxWidth: '1024px'
+      maxWidth: '1024px',
+      maxHeight: 'unset',
+      disableClose: true
     });
 
     await firstValueFrom(modal.afterClosed());

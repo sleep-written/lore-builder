@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-create',
@@ -13,5 +14,11 @@ export class ModalCreateComponent {
     description:  [ '', [ Validators.required, Validators.minLength(3) ] ]
   });
 
-  
+  constructor(
+    private _dialogRef: MatDialogRef<ModalCreateComponent>,
+  ) {}
+
+  close(): void {
+    this._dialogRef.close();
+  }
 }
