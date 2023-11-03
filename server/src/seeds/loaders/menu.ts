@@ -9,14 +9,14 @@ export async function menuLoader(manager: EntityManager): Promise<void> {
     await bulk.save({
         icon: 'person',
         path: 'character',
-        text: 'Personajes',
+        text: 'Characters',
         visible: true
     });
 
     await bulk.save({
         icon: 'person',
         path: 'character/:hash',
-        text: 'Personaje',
+        text: 'Character',
         visible: false
     });
 

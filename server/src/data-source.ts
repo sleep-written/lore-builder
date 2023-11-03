@@ -1,3 +1,4 @@
+import { pathResolve } from '@bleed-believer/path-alias';
 import { DataSource } from 'typeorm';
 import { resolve } from 'path';
 
