@@ -14,10 +14,7 @@ export class MenuService {
   ) { }
 
   get(): Promise<Menu[]> {
-    const res = this._http.get<Menu[]>('api/menu', {
-      headers: { 'content-type': 'application/json; charset=utf-8' }
-    });
-
+    const res = this._http.get<Menu[]>('api/menu');
     return firstValueFrom(res);
   }
 }

@@ -5,20 +5,24 @@ import { CharacterRoutingModule } from './character-routing.module';
 
 import { CharacterComponent } from './character.component';
 import { ModalCreateComponent } from './modal-create';
+import { CharacterCardComponent } from './character-card';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { CommonInputModule } from '@shared/common-input';
 import { FlexGridTileModule } from '@shared/flex-grid-tile';
 
 @NgModule({
   declarations: [
     CharacterComponent,
-    ModalCreateComponent
+    ModalCreateComponent,
+    CharacterCardComponent
   ],
   imports: [
     CommonModule,
@@ -30,8 +34,10 @@ import { FlexGridTileModule } from '@shared/flex-grid-tile';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    MatSnackBarModule,
     MatFormFieldModule,
 
+    CommonInputModule,
     FlexGridTileModule,
   ]
 })

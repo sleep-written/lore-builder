@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ this.character.name }}</mat-card-title>
+        <mat-card-subtitle>Tag: {{ this.character.tag?.cod }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="picture">
+        </div>
+
+        <div class="description">{{
+            this.character.tag?.description
+        }}</div>
+    </mat-card-content>
+</mat-card>

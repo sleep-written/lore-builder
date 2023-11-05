@@ -6,6 +6,5 @@ export function srcPathResolve(...pathParts: string[]): string {
     :   'dist';
 
     const out = resolve(base, ...pathParts);
-    console.log('path:', out);
     return out;
 }

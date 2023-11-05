@@ -1,40 +1,49 @@
 <form
-[formGroup]="this.form">
+[formGroup]="this.form"
+(ngSubmit)="this.save()">
     <h2 mat-dialog-title>Create character</h2>
 
     <mat-dialog-content>
-        <mat-grid-list [cols]="4" rowHeight="6rem">
-            <mat-grid-tile FlexGridTile [smCol]="4" [mdCol]="2" [lgCol]="1">
+        <mat-grid-list [cols]="6" rowHeight="6rem">
+            <mat-grid-tile FlexGridTile [smCol]="6" [mdCol]="3" [lgCol]="2">
                 <mat-form-field>
                     <mat-label>Tag name</mat-label>
                     <input matInput
+                    appLowercase
                     type="text"
-                    formControlName="tag" />
+                    autocomplete="off"
+                    appRegexBlur="[^0-9a-z_]"
+                    formControlName="tag"
+                    [onInput]="true"
+                    [maxlength]="128" />
 
-                    <mat-hint>To attach with the character</mat-hint>
+                    <mat-hint>Only letters, numbers and underscores</mat-hint>
                     <mat-error>Minimum 3 characters</mat-error>
                 </mat-form-field>
             </mat-grid-tile>
             
-            <mat-grid-tile FlexGridTile [smCol]="4" [mdCol]="2" [lgCol]="3">
+            <mat-grid-tile FlexGridTile [smCol]="6" [mdCol]="3" [lgCol]="4">
                 <mat-form-field>
                     <mat-label>Character name</mat-label>
-                    <input matInput
+                    <input matInput appTrim
                     type="text"
-                    formControlName="name" />
+                    autocomplete="off"
+                    formControlName="name"
+                    [maxlength]="256" />
 
                     <mat-hint>Full name of the character</mat-hint>
                     <mat-error>Minimum 3 characters</mat-error>
                 </mat-form-field>
             </mat-grid-tile>
             
-            <mat-grid-tile FlexGridTile [mdCol]="4" [rowspan]="2">
+            <mat-grid-tile FlexGridTile [mdCol]="6" [rowspan]="2">
                 <mat-form-field>
                     <mat-label>Description</mat-label>
-                    <textarea matInput
+                    <textarea matInput appTrim
                     formControlName="description"
                     [rows]="6"
-                    [style.resize]="'none'">
+                    [style.resize]="'none'"
+                    [maxlength]="1024">
                     </textarea>
 
                     <mat-hint>A description to attach into the character's tag</mat-hint>

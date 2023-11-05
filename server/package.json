@@ -25,6 +25,7 @@
         "@bleed-believer/commander": "^0.11.0",
         "@bleed-believer/espresso": "^0.11.0",
         "@bleed-believer/path-alias": "^1.0.0",
+        "audit-var": "^2.2.1",
         "express": "^4.18.2",
         "sqlite3": "^5.1.6",
         "tslog": "^4.9.2",
