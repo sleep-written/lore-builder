@@ -17,6 +17,7 @@
         "paths": {
             "@entities/*": ["./entities/*"],
             "@server/*": ["./server/*"],
+            "@seeds/*": ["./seeds/*"],
             "@tool/*": ["./tool/*"],
             "@/*": ["./*"]
         }

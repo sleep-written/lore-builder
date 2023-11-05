@@ -1,4 +1,5 @@
 import type { EntityManager } from 'typeorm';
+
 import { BulkInsert } from '../core/index.js';
 import { Menu } from '@entities/menu.entity.js';
 

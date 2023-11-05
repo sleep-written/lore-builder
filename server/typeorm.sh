@@ -4,13 +4,11 @@ if [ $1 = "dist" ]; then
     # Eliminar el primer elemento de los argumentos
     shift
 
-    # Eliminar carpeta transpilados
-    echo \> Eliminando "./dist" ...
-    rm -rf ./dist
-
     # Volver a transpilar
-    echo \> Transpilando...
-    npx tsc -p ./tsconfig.build.json
+    npm run build
+else
+    # Set the env variable to use the root path
+    export USE_SRC_DIR=true
 fi
 
 # Ejecutar el CLI de TypeORM

@@ -8,7 +8,6 @@ export default {
         mts: 'module',
     },
     nodeArguments: [
-        '--no-warnings',
-        '--loader=@bleed-believer/path-alias'
+        '--import=@bleed-believer/path-alias'
     ]
 }
