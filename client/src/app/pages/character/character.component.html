@@ -1,12 +1,19 @@
-<button mat-raised-button
-type="button"
-color="primary"
-(click)="this.addCharacter()">
-    <mat-icon>add</mat-icon>
-    <span>Add character</span>
-</button>
+<mat-grid-list
+rowHeight="20rem"
+gutterSize="1rem"
+[cols]="2">
+    <mat-grid-tile FlexGridTile
+    [mdCol]="2" [lgCol]="1">
+        <app-character-create
+        (created)="this.ngOnInit()">
+        </app-character-create>
+    </mat-grid-tile>
 
-<app-character-card
-*ngFor="let character of this.characters"
-[character]="character">
-</app-character-card>
+    <mat-grid-tile FlexGridTile
+    [mdCol]="2" [lgCol]="1"
+    *ngFor="let character of this.characters">
+        <app-character-card
+        [character]="character">
+        </app-character-card>
+    </mat-grid-tile>
+</mat-grid-list>

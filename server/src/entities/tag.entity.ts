@@ -1,5 +1,4 @@
 import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn, type Relation } from 'typeorm';
-import { RelTagPicture } from './rel-tag-picture.entity.js';
 import { Character } from './character.entity.js';
 
 @Entity({ name: 'Tag' })
@@ -15,7 +14,4 @@ export class Tag extends BaseEntity {
 
     @OneToOne(_ => Character, r => r.tag, { nullable: true })
     character?: Relation<Character> | null;
-
-    @OneToMany(_ => RelTagPicture, r => r.tag)
-    pictures?: Relation<RelTagPicture[]> | null;
 }

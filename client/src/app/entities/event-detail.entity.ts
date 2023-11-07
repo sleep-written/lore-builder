@@ -1,8 +1,7 @@
 import { Character } from './character.entity';
 
-export interface Tag {
+export interface EventDetail {
     id: number;
-    cod: string;
     description: string;
     character?: Character | null;
 }

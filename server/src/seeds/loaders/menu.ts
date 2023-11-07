@@ -16,7 +16,7 @@ export async function menuLoader(manager: EntityManager): Promise<void> {
 
     await bulk.save({
         icon: 'person',
-        path: 'character/:hash',
+        path: 'character/:tag',
         text: 'Character',
         visible: false
     });

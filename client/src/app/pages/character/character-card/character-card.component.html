@@ -5,11 +5,24 @@
     </mat-card-header>
 
     <mat-card-content>
-        <div class="picture">
+        <div class="picture"
+        [class.empty]="true">
+
         </div>
 
-        <div class="description">{{
-            this.character.tag?.description
-        }}</div>
+        <div class="content">
+            <div class="description">
+                <p>{{ this.character.tag?.description }}</p>
+            </div>
+
+            <div class="actions">
+                <a mat-raised-button
+                color="accent"
+                [routerLink]="this.character.tag?.cod">
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit character</span>
+                </a>
+            </div>
+        </div>
     </mat-card-content>
 </mat-card>
