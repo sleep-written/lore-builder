@@ -11,8 +11,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDateFnsModule } from '@angular/material-date-fns-adapter';
 
 import { SidenavMenuModule } from '@shared/sidenav-menu';
+
+import { es } from 'date-fns/locale';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -29,10 +33,16 @@ import { SidenavMenuModule } from '@shared/sidenav-menu';
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatDateFnsModule,
 
     SidenavMenuModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: es
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

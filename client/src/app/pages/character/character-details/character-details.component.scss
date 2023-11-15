@@ -1,0 +1,7 @@
+:host {
+    display: flex;
+    
+    & > .events {
+        width: 100%;
+    }
+}

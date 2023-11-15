@@ -1,7 +1,9 @@
 import { firstValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Character } from '@entities/character.entity';
+import { Event } from '@entities/event.entity';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,14 @@ export class CharacterService {
 
   get(): Promise<Character[]> {
     const res = this._http.get<Character[]>('api/character');
+    return firstValueFrom(res);
+  }
+
+  getCharacter(tag: string): Promise<{
+    character: Character;
+    events: Event[];
+  }> {
+    const res = this._http.get<any>(`api/character/${tag}`);
     return firstValueFrom(res);
   }
 }

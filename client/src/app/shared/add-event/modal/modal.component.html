@@ -1,0 +1,93 @@
+<form
+[formGroup]="this.form"
+(ngSubmit)="this.onSubmit()">
+    <h2 mat-dialog-title>Add event</h2>
+
+    <mat-dialog-content>
+        <mat-grid-list [cols]="6" rowHeight="6rem">
+            <mat-grid-tile FlexGridTile [smCol]="6" [mdCol]="4">
+                <mat-form-field>
+                    <mat-label>Event title</mat-label>
+                    <input matInput appTrim
+                    type="text"
+                    autocomplete="off"
+                    formControlName="title"
+                    [maxlength]="128" />
+        
+                    <mat-hint>A Short title to identify the event</mat-hint>
+                    <mat-error>This field is required</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            
+            <mat-grid-tile FlexGridTile [smCol]="6" [mdCol]="2">
+                <mat-form-field>
+                    <mat-label>Event title</mat-label>
+                    <input matInput appTrim
+                    type="text"
+                    autocomplete="off"
+                    formControlName="date"
+                    [readonly]="true"
+                    [maxlength]="128"
+                    [matDatepicker]="picker" />
+
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+        
+                    <mat-hint>Date of the event</mat-hint>
+                    <mat-error>This field is required</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            
+            <mat-grid-tile FlexGridTile [smCol]="6" [rowspan]="2">
+                <mat-form-field>
+                    <mat-label>Event description</mat-label>
+                    <textarea matInput appTrim
+                    type="text"
+                    autocomplete="off"
+                    formControlName="description"
+                    [rows]="6"
+                    [maxlength]="2048"
+                    [style.resize]="'none'">
+                    </textarea>
+
+                    <mat-hint>A general description of the event</mat-hint>
+                    <mat-error>This field is required</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            
+            <mat-grid-tile FlexGridTile [smCol]="6" [rowspan]="2">
+                <mat-form-field>
+                    <mat-label>Details</mat-label>
+                    <textarea matInput appTrim
+                    type="text"
+                    autocomplete="off"
+                    formControlName="details"
+                    [rows]="6"
+                    [style.resize]="'none'">
+                    </textarea>
+                    
+                    <mat-hint>A detailed description of the event about the character</mat-hint>
+                    <mat-error>This field is required</mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-raised-button
+        type="submit"
+        color="warn"
+        [disabled]="this.form.invalid">
+            <mat-icon>save</mat-icon>
+            <span>Save</span>
+        </button>
+
+        <button mat-raised-button
+        type="button"
+        color="primary"
+        (click)="this.close()">
+            <mat-icon>close</mat-icon>
+            <span>Close</span>
+        </button>
+    </mat-dialog-actions>
+</form>

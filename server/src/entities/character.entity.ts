@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn, type Relation } from 'typeorm';
+import type { Relation } from 'typeorm';
+import { BaseEntity, Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { EventDetail } from './event-detail.entity.js';
 import { Tag } from './tag.entity.js';
 

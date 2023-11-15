@@ -16,7 +16,7 @@ export class CreateController extends Controller {
             name:           { type: 'string', min: 3, max:  256, trim: true },
             description:    { type: 'string', min: 3, max: 1024, trim: true },
         }
-    })
+    });
 
     @Post()
     async start(): Promise<void> {

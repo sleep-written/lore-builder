@@ -1,1 +1,16 @@
-<p>character-details works!</p>
+<app-add-event
+[tag]="this.tag"
+(createdEvent)="this.ngOnInit()">
+</app-add-event>
+
+<div class="events">
+    <mat-grid-list [cols]="2" rowHeight="20rem" gutterSize="1rem">
+        <mat-grid-tile FlexGridTile
+        *ngFor="let event of this.events"
+        [mdCol]="2" [lgCol]="1">
+            <app-event-panel
+            [event]="event">
+            </app-event-panel>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
