@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Event } from '@entities/event.entity';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -28,5 +29,15 @@ export class EventService {
     });
 
     return firstValueFrom(obs);
+  }
+
+  async get(id: number): Promise<Event> {
+    const obs = this._http.get<Event>(`api/event/${id}`, {
+      headers: this.#headers
+    });
+
+    const res = await firstValueFrom(obs);
+    res.date = new Date(res.date);
+    return res;
   }
 }

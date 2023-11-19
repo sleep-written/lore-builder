@@ -1,0 +1,46 @@
+:host,
+:host mat-card {
+    width: 100%;
+    height: 100%;
+}
+
+mat-card-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    flex: 1;
+
+    h2,
+    h3,
+    h4 {
+        margin: 0;
+        width: 100%;
+    }
+
+    section.description{
+        flex: 1;
+    }
+
+    section.characters {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        width: calc(100% + 1rem);
+        margin: 0 -.5rem;
+
+        h2,
+        h3,
+        h4 {
+            padding: 0 .5rem;
+        }
+
+        a {
+            border-radius: 2rem;
+            margin: 0 .5rem;
+        }
+    }
+}

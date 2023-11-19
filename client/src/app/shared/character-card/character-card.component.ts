@@ -8,5 +8,5 @@ import { Character } from '@entities/character.entity';
 })
 export class CharacterCardComponent {
   @Input()
-  character!: Character;
+  character?: Character;
 }

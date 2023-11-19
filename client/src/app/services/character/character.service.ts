@@ -9,7 +9,6 @@ import { Event } from '@entities/event.entity';
   providedIn: 'root'
 })
 export class CharacterService {
-
   constructor(
     private _http: HttpClient,
   ) { }
@@ -33,11 +32,20 @@ export class CharacterService {
     return firstValueFrom(res);
   }
 
-  getCharacter(tag: string): Promise<{
+  async getCharacter(tag: string): Promise<{
     character: Character;
     events: Event[];
   }> {
-    const res = this._http.get<any>(`api/character/${tag}`);
-    return firstValueFrom(res);
+    const res = this._http.get<{
+      character: Character;
+      events: Event[];
+    }>(`api/character/${tag}`);
+
+    const body = await firstValueFrom(res);
+    for (const event of body.events) {
+      event.date = new Date(event.date);
+    }
+    
+    return body;
   }
 }

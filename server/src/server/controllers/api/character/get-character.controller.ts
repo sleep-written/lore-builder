@@ -32,14 +32,12 @@ export class GetCharacterController extends Controller {
 
         // Clone character
         const cleanedCharacter = structuredClone(character);
-        delete cleanedCharacter.tag;
-
         for (const event of events) {
             // Get all details
             event.eventDetails = await EventDetail.find({
                 where: { character: { id: Not(character.id) } },
                 relations: {
-                    character: true
+                    character: { tag: true }
                 }
             });
 

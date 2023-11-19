@@ -1,0 +1,34 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ this.event.title }}</mat-card-title>
+        <mat-card-subtitle>{{ this.date }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <section class="description">
+            <h3>Description</h3>
+            <p>{{ this.event.description }}</p>
+        </section>
+
+        <section class="characters">
+            <h3>Characters</h3>
+
+            <mat-chip-listbox>
+                <mat-chip mat-stroked-button
+                *ngFor="let item of this.characters">
+                    {{ item.name }}
+                </mat-chip>
+            </mat-chip-listbox>
+        </section>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <a mat-raised-button
+        type="button"
+        color="primary"
+        [routerLink]="'/event/' + this.event.id">
+            <mat-icon>edit</mat-icon>
+            <span>Edit event</span>
+        </a>
+    </mat-card-actions>
+</mat-card>

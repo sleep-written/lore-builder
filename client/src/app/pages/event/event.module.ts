@@ -1,44 +1,38 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EventRoutingModule } from './event-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CharacterRoutingModule } from './character-routing.module';
 
-import { CharacterComponent } from './character.component';
+import { EventComponent } from './event.component';
+import { MainEventComponent } from './main-event';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { CommonInputModule } from '@shared/common-input';
 import { FlexGridTileModule } from '@shared/flex-grid-tile';
-import { AddCharacterModule } from '@shared/add-character';
-import { CharacterCardModule } from '@shared/character-card';
 
 @NgModule({
   declarations: [
-    CharacterComponent,
+    EventComponent,
+    MainEventComponent,
   ],
   imports: [
     CommonModule,
+    EventRoutingModule,
     ReactiveFormsModule,
-    CharacterRoutingModule,
 
     MatCardModule,
     MatIconModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
+    MatDatepickerModule,
 
     CommonInputModule,
     FlexGridTileModule,
-    AddCharacterModule,
-    CharacterCardModule,
   ]
 })
-export class CharacterModule { }
+export class EventModule { }

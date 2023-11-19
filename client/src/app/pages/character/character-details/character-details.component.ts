@@ -25,9 +25,10 @@ export class CharacterDetailsComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.tag = this._activatedRoute.snapshot.params['tag'];
     const { character, events } = await this._characterServ.getCharacter(this.tag);
-    
     this.character = character;
     this.events = events;
+
+    await this._characterServ.get();
     this._changeDet.detectChanges();
   }
 }

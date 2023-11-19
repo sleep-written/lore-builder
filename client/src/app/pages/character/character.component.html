@@ -4,9 +4,9 @@ gutterSize="1rem"
 [cols]="2">
     <mat-grid-tile FlexGridTile
     [mdCol]="2" [lgCol]="1">
-        <app-character-create
+        <app-add-character
         (created)="this.ngOnInit()">
-        </app-character-create>
+        </app-add-character>
     </mat-grid-tile>
 
     <mat-grid-tile FlexGridTile
@@ -14,6 +14,12 @@ gutterSize="1rem"
     *ngFor="let character of this.characters">
         <app-character-card
         [character]="character">
+            <a mat-raised-button
+            color="accent"
+            [routerLink]="character.tag?.cod">
+                <mat-icon>edit</mat-icon>
+                <span>Edit character</span>
+            </a>
         </app-character-card>
     </mat-grid-tile>
 </mat-grid-list>

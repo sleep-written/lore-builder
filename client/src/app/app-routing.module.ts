@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/character').then(m => m.CharacterModule)
   },
   {
+    path: 'event/:id',
+    loadChildren: () => import('./pages/event').then(m => m.EventModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/not-found').then(m => m.NotFoundModule)
   }

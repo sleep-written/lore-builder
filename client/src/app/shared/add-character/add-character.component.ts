@@ -1,15 +1,15 @@
+import { Component, EventEmitter, Output } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { Component, EventEmitter, Output } from '@angular/core';
 
 import { ModalCreateComponent } from './modal-create';
 
 @Component({
-  selector: 'app-character-create',
-  templateUrl: './character-create.component.html',
-  styleUrls: ['./character-create.component.scss']
+  selector: 'app-add-character',
+  templateUrl: './add-character.component.html',
+  styleUrls: ['./add-character.component.scss'],
 })
-export class CharacterCreateComponent {
+export class AddCharacterComponent {
   @Output()
   created = new EventEmitter<void>();
 
