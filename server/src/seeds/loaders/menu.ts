@@ -8,17 +8,10 @@ export async function menuLoader(manager: EntityManager): Promise<void> {
     await bulk.initialize();
 
     await bulk.save({
-        icon: 'person',
-        path: 'character',
-        text: 'Characters',
+        icon: 'fa-solid fa-brain',
+        path: '/story',
+        text: 'Stories',
         visible: true
-    });
-
-    await bulk.save({
-        icon: 'person',
-        path: 'character/:tag',
-        text: 'Character',
-        visible: false
     });
 
     await bulk.clean();

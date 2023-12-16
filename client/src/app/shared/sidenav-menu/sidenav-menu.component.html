@@ -3,7 +3,7 @@
     *ngFor="let menu of this.menus"
     [routerLink]="menu.path">
         <div class="content">
-            <mat-icon>{{ menu.icon }}</mat-icon>
+            <i [class]="menu.icon"></i>
             <span>{{ menu.text }}</span>
         </div>
     </mat-list-item>

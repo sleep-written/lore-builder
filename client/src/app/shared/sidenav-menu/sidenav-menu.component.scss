@@ -7,4 +7,15 @@ mat-list-item .content {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+
+    i {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.25rem;
+    }
 }
