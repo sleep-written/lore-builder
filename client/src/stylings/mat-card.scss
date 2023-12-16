@@ -6,5 +6,15 @@ mat-card {
     mat-card-actions {
         padding-top: unset;
         padding: 1rem!important;
+
+        button {
+            i:not(:last-child) {
+                margin-right: .5rem;
+            }
+        
+            &:not(:first-child) {
+                margin-left: 1rem;
+            }
+        }
     }
 }

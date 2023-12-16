@@ -9,7 +9,7 @@ export async function menuLoader(manager: EntityManager): Promise<void> {
 
     await bulk.save({
         icon: 'fa-solid fa-brain',
-        path: '/story',
+        path: '/stories',
         text: 'Stories',
         visible: true
     });
