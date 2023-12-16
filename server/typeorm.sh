@@ -8,7 +8,7 @@ if [ $1 = "dist" ]; then
     npm run build
 else
     # Set the env variable to use the root path
-    export USE_SRC_DIR=true
+    export RESOLVE_SRC=true
 fi
 
 # Ejecutar el CLI de TypeORM
