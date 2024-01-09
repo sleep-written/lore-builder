@@ -1,0 +1,10 @@
+{
+    "watch": "./src",
+    "ext": "ts,json",
+    "execMap": {
+        "ts": "node"
+    },
+    "execArgs": [
+        "--import=@bleed-believer/path-alias"
+    ]
+}

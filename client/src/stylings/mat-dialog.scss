@@ -1,0 +1,28 @@
+mat-dialog-container {
+    h1[mat-dialog-title],
+    h2[mat-dialog-title],
+    h3[mat-dialog-title],
+    h4[mat-dialog-title],
+    [mat-dialog-title] h1,
+    [mat-dialog-title] h2,
+    [mat-dialog-title] h3,
+    [mat-dialog-title] h4 {
+        margin: 0;
+    }
+
+    mat-dialog-actions {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end!important;
+        align-items: center!important;
+
+        margin: 1.5rem!important;
+        margin-top: 0!important;
+        padding: 0!important;
+        min-height: 0 !important;
+
+        & > *:not(:first-child) {
+            margin-left: .5rem;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button
+  type="button"
+  (click)="this.navbarOpened = !this.navbarOpened">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <a routerLink="">{{ this.title }}</a>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+  [(opened)]="this.navbarOpened">
+    aquí va el menú
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet>
+    </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
