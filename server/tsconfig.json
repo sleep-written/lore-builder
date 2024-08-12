@@ -15,7 +15,11 @@
         "sourceMap": true,
 
         "paths": {
-            "@entities/*": [ "./entities/*" ]
+            "@entities/*": [ "./entities/*" ],
+            "@seeder/*": [ "./seeder/*" ],
+            "@server/*": [ "./server/*" ],
+            "@tool/*": [ "./tool/*" ],
+            "@/*": ["./*" ]
         }
     }
 }

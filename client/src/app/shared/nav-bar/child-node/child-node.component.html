@@ -1,0 +1,20 @@
+@if (this.path) {
+    <a mat-button
+    [routerLink]="this.path">
+        <ng-container [ngTemplateOutlet]="this.content">
+        </ng-container>
+    </a>
+} @else {
+    <button mat-button>
+        <ng-container [ngTemplateOutlet]="this.content">
+        </ng-container>
+    </button>
+}
+
+<ng-template #content>
+    <div class="menu-content">
+        <i [class]="this.icon"></i>
+    
+        <span>{{ this.name }}</span>
+    </div>
+</ng-template>

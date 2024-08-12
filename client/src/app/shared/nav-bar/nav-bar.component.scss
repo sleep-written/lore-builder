@@ -1,0 +1,14 @@
+:host mat-tree-node,
+:host mat-nested-tree-node {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+:host mat-tree-node {
+    flex-flow: row nowrap;
+}
+
+:host mat-nested-tree-node {
+    flex-flow: column nowrap;
+}

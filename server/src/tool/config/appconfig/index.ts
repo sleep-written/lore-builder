@@ -1,0 +1,1 @@
+export { Appconfig } from './appconfig.js';

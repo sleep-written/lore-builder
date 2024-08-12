@@ -1,0 +1,10 @@
+{
+    "ext": "js,ts,yml,json",
+    "env": {
+        "RESOLVE_SRC": true
+    },
+    "watch": [
+        "src",
+        "*.yml"
+    ]
+}

@@ -1,0 +1,64 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    mat-toolbar {
+        height: 3rem;
+
+        button {
+            width: 2.5rem;
+            height: 2.5rem;
+            min-width: unset;
+            font-size: 1.75rem;
+        }
+
+        a {
+            color: initial;
+            text-decoration: none;
+            padding: 0 1rem;
+        }
+    }
+
+    mat-sidenav-container {
+        flex: 1;
+    }
+}
+
+
+mat-sidenav-container {
+    mat-sidenav {
+        border-radius: 0;
+    }
+
+    mat-sidenav-content{
+        position: relative;
+        overflow-y: auto;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        & > ::ng-deep * {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        & > router-outlet {
+            display: none;
+        }
+    }
+}

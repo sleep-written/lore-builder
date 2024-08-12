@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+:host > mat-expansion-panel {
+    border-radius: 0;
+    box-shadow: unset;
+
+    mat-expansion-panel-header {
+        padding-left: 0;
+    }
+
+    ::ng-deep .mat-expansion-panel-body {
+        padding: 0;
+    }
+}

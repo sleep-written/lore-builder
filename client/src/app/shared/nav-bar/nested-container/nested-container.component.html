@@ -1,0 +1,30 @@
+@if (this.node.children && this.node.children.length > 0) {
+    <mat-expansion-panel>
+        <mat-expansion-panel-header
+        expandedHeight="unset">
+            <mat-panel-title>
+                <app-child-node
+                [icon]="this.node.icon"
+                [name]="this.node.name"
+                [path]="this.node.path">
+                </app-child-node>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+    
+        @if (this.node.children && this.node.children.length > 0) {
+            @for (child of this.node.children; track child.id) {
+                <app-nested-container
+                [node]="child">
+                </app-nested-container>
+            }
+        }
+    </mat-expansion-panel>
+
+} @else {
+    <app-child-node
+    [icon]="this.node.icon"
+    [name]="this.node.name"
+    [path]="this.node.path">
+    </app-child-node>
+
+}
