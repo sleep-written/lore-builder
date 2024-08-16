@@ -1,0 +1,43 @@
+<mat-dialog-content>
+    <h2>{{ this.modalData.title }}</h2>
+
+    <div class="icon">
+        <i *ngIf="this.modalData.type === 'info'"
+        class="{{ this.modalData.type }} fas fa-info-circle">
+        </i>
+
+        <i *ngIf="this.modalData.type === 'success'"
+        class="{{ this.modalData.type }} fas fa-check-circle">
+        </i>
+
+        <i *ngIf="this.modalData.type === 'danger'"
+        class="{{ this.modalData.type }} fas fa-exclamation-circle">
+        </i>
+
+        <i *ngIf="this.modalData.type === 'forbibben'"
+        class="{{ this.modalData.type }} fas fa-times-circle">
+        </i>
+
+        <i *ngIf="this.modalData.type === 'warning'"
+        class="{{ this.modalData.type }} fas fa-exclamation-circle">
+        </i>
+    </div>
+
+    <div
+    class="text"
+    [innerHTML]="this.modalData.content"></div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button
+    *ngFor="let item of this.modalData.buttons"
+    [color]="item.color ?? 'primary'"
+    (click)="this.triggerAction(item.dissmiss, item.action)">
+        <i *ngIf="item.faicon"
+        [ngClass]="item.faicon"></i>
+
+        <span *ngIf="item.text">
+            {{ item.text }}
+        </span>
+    </button>
+</mat-dialog-actions>

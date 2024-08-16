@@ -37,7 +37,8 @@ export class GetController extends Controller {
 
     @Get()
     async get(): Promise<void> {
-        const data = await Universe.find();
-        this.response.json(data);
+        const { take, skip } = this.#api.paginator ?? {};
+        const [ data, total ] = await Universe.findAndCount({ take, skip });
+        this.response.json({ data, total });
     }
 }

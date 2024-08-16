@@ -19,7 +19,9 @@ export class ServerCommand implements Executable {
     async #deployServer() {
         const appconfig = await new Appconfig().load();
         const app = express();
+        app.use(express.urlencoded({ extended: true }));
         app.use(express.static(appconfig.clientPath));
+        app.use(express.json({ strict: true }));
         
         const esp = new Espresso(app, { lowercase: true, verbose: true });
         esp.onError(this.#onError.bind(this))

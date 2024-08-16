@@ -1,0 +1,61 @@
+@if (this.isNew) {
+    <h2 mat-dialog-title>Create new universe</h2>
+} @else {
+    <h2 mat-dialog-title>Edit existing universe</h2>
+}
+
+<mat-dialog-content
+[formGroup]="this.form">
+    <mat-grid-list [cols]="1" rowHeight="6rem">
+        <mat-grid-tile FlexGridTile [xsCol]="1">
+            <mat-form-field>
+                <mat-label>Universe name</mat-label>
+                <input matInput
+                type="text"
+                minlength="3"
+                maxlength="128"
+                formControlName="name" />
+
+                <mat-hint>The name of the universe</mat-hint>
+                <mat-error>Required</mat-error>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile FlexGridTile [xsCol]="1" [xsRow]="2">
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput
+                minlength="3"
+                maxlength="1024"
+                formControlName="description"
+                [rows]="6">
+                </textarea>
+
+                <mat-hint>The description of the universe</mat-hint>
+                <mat-error>Required</mat-error>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-flat-button
+    type="button"
+    [disabled]="this.form.pristine || this.form.invalid || this.loading"
+    (click)="this.save()">
+        @if (this.loading) {
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        } @else {
+            <i class="fa-solid fa-floppy-disk"></i>
+        }
+
+        <span>Save</span>
+    </button>
+    
+    <button mat-flat-button
+    type="button"
+    (click)="this.cancel()">
+        <i class="fa-solid fa-xmark"></i>
+        <span>Cancel</span>
+    </button>
+</mat-dialog-actions>

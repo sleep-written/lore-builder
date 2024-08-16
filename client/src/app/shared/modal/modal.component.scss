@@ -1,0 +1,57 @@
+$icon-size: 7rem;
+$margin: 1rem;
+
+:host {
+    & > mat-dialog-content,
+    & > mat-dialog-actions {
+        padding: $margin;
+    }
+
+    & > mat-dialog-content {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+
+        padding-bottom: calc($margin / 2);
+
+        h2 {
+            width: 100%;
+            margin-bottom: $margin;
+        }
+
+        .icon {
+            width: $icon-size;
+            height: $icon-size;
+        
+            i {
+                font-size: $icon-size;
+            }
+        
+            i.info          { color: #7d74fd }
+            i.success       { color: #57d362 }
+            i.danger        { color: #ff3636 }
+            i.forbibben     { color: #ff3636 }
+            i.warning       { color: #f8c15b }
+        }
+        
+        .text {
+            flex: 1;
+            text-align: justify;
+            padding-left: $margin;
+            white-space: pre-line;
+            display: block;
+            
+            strong {
+                display: inline-block!important;
+            }
+        }
+    }
+
+    & > mat-dialog-actions {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}

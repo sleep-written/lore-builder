@@ -2,10 +2,11 @@ import { Controller, ControllerPath, Get } from '@bleed-believer/espresso';
 import { Not } from 'typeorm';
 
 import { EventDetail } from '@entities/event-detail.js';
-import { Event } from '@entities/event.js';
-import { API } from '@server/api.js';
 import { Character } from '@entities/character.js';
+import { Event } from '@entities/event.js';
+
 import { ServerError } from '@server/server.error.js';
+import { API } from '@server/api.js';
 
 @ControllerPath('')
 export class GetController extends Controller {

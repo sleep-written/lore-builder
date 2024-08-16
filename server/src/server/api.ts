@@ -16,6 +16,28 @@ export class API {
         throw new ServerError(`El id indicado "${rawId}" es inválido`, 400);
     }
 
+    get paginator(): { take: number; skip: number; } | null {
+        const rawTake = typeof this.#request.query.take === 'string'
+            ?   parseInt(this.#request.query.take)
+            :   undefined;
+
+        const skip = typeof this.#request.query.skip === 'string'
+            ?   parseInt(this.#request.query.skip)
+            :   0;
+
+        if (!isNaN(skip)) {
+            const take = rawTake && !isNaN(rawTake)
+                ?   rawTake
+                :   0;
+
+            return { take, skip };
+
+        } else {
+            return null;
+
+        }
+    }
+
     constructor(request: Request) {
         this.#request = request;
     }

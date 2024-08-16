@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit, Output, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -12,17 +12,20 @@ import { Menu } from '@entities/menu';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavBarComponent implements OnInit, OnDestroy {
+  private _changeDet = inject(ChangeDetectorRef);
+  private _menuServ = inject(MenuService);
+  private _router = inject(Router);
+
   #subscription?: Subscription;
   menus: Menu[] = [];
 
   @Output()
   routerChange = new EventEmitter<NavigationEnd>();
 
-  constructor(
-    private _changeDet: ChangeDetectorRef,
-    private _menuServ: MenuService,
-    private _router: Router,
-  ) {}
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   async ngOnInit(): Promise<void> {
     this.#subscription = this._router.events

@@ -1,0 +1,9 @@
+.mdc-button > span.mdc-button__label {
+    & > *{
+        margin-left: .5rem;
+    }
+
+    & > *:first-child{
+        margin-left: unset;
+    }
+}

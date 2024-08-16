@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,15 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
+  private _changeDet = inject(ChangeDetectorRef);
+
   title = 'client';
   opened = false;
 
-  constructor(
-    private _changeDet: ChangeDetectorRef,
-  ) {}
+  /** Inserted by Angular inject() migration for backwards compatibility */
+  constructor(...args: unknown[]);
+
+  constructor() {}
 
   onRouteChange(): void {
     this.opened = false;
