@@ -1,6 +1,16 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Universes</mat-card-title>
+        <app-flex-card-header>
+            <mat-card-title>Universes</mat-card-title>
+            
+            <button mat-icon-button
+            matTooltip="Create universe"
+            type="button"
+            [disabled]="this.loading"
+            (click)="this.setUniverse()">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </app-flex-card-header>
     </mat-card-header>
 
     <mat-card-content>
@@ -25,7 +35,8 @@
                     <button mat-icon-button
                     matTooltip="Delete universe"
                     type="button"
-                    [disabled]="this.loading">
+                    [disabled]="this.loading"
+                    (click)="this.deleteUniverse(item)">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </td>

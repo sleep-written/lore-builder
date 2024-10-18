@@ -1,0 +1,16 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    ::ng-deep mat-card-title {
+        flex: 1!important;
+    }
+
+    a,
+    button {
+        margin-left: .5rem;
+    }
+}

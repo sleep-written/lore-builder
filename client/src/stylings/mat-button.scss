@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@use './theme.scss' as *;
+
 .mdc-button > span.mdc-button__label {
     & > *{
         margin-left: .5rem;
@@ -6,4 +9,19 @@
     & > *:first-child{
         margin-left: unset;
     }
+}
+
+a.mat-primary,
+button.mat-primary {
+  @include mat.button-color($client-theme, $color-variant: primary);
+}
+
+a.mat-secondary,
+button.mat-secondary {
+  @include mat.button-color($client-theme, $color-variant: secondary);
+}
+
+a.mat-tertiary,
+button.mat-tertiary {
+  @include mat.button-color($client-theme, $color-variant: tertiary);
 }

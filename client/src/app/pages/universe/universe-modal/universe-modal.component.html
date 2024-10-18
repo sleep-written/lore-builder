@@ -41,6 +41,7 @@
 <mat-dialog-actions>
     <button mat-flat-button
     type="button"
+    color="primary"
     [disabled]="this.form.pristine || this.form.invalid || this.loading"
     (click)="this.save()">
         @if (this.loading) {
@@ -54,6 +55,7 @@
     
     <button mat-flat-button
     type="button"
+    color="secondary"
     (click)="this.cancel()">
         <i class="fa-solid fa-xmark"></i>
         <span>Cancel</span>

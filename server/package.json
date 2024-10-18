@@ -2,31 +2,29 @@
     "name": "server",
     "type": "module",
     "scripts": {
-        "nodemon": "npx nodemon --exec \"bb-path-alias ./src/index.ts\"",
-        "typeorm": "RESOLVE_SRC=true npx bb-path-alias ./node_modules/typeorm/cli.js",
-        "start": "RESOLVE_SRC=true npx bb-path-alias ./src/index.js",
-        "setup": "bb-path-alias ./src/setup.ts",
+        "nodemon": "npx nodemon --exec \"bb-path-alias start ./src/index.ts\"",
+        "typeorm": "node --import @bleed-believer/path-alias ./node_modules/typeorm/cli.js",
+        "setup": "bb-path-alias start ./src/setup.ts",
+        "start": "bb-path-alias start ./src/index.js",
         "check": "tsc --noEmit",
         "clean": "rm -rf ./dist",
-        "build": "tsc --sourceMap false"
+        "build": "bb-path-alias build"
     },
     "devDependencies": {
-        "@swc/cli": "^0.4.0",
-        "@swc/core": "^1.7.10",
-        "@types/express": "^4.17.21",
-        "@types/node": "^22.2.0",
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.7.6",
         "ava": "^6.1.3",
-        "nodemon": "^3.1.4",
-        "typescript": "^5.5.4"
+        "nodemon": "^3.1.7",
+        "typescript": "^5.6.3"
     },
     "dependencies": {
-        "@bleed-believer/commander": "^0.11.2",
-        "@bleed-believer/espresso": "^0.11.2",
-        "@bleed-believer/path-alias": "^1.1.3",
+        "@bleed-believer/commander": "^0.11.3",
+        "@bleed-believer/espresso": "^0.11.3",
+        "@bleed-believer/path-alias": "^2.1.2",
         "audit-var": "^2.3.1",
         "sqlite3": "^5.1.7",
         "tslog": "^4.9.3",
         "typeorm": "^0.3.20",
-        "yaml": "^2.5.0"
+        "yaml": "^2.6.0"
     }
 }

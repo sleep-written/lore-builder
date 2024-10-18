@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { ModalModule } from '@shared/modal';
 import { FlexGridTileModule } from '@shared/flex-grid-tile';
+import { FlexCardHeaderModule } from '@shared/flex-card-header';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FlexGridTileModule } from '@shared/flex-grid-tile';
 
     ModalModule,
     FlexGridTileModule,
+    FlexCardHeaderModule,
   ],
   providers: [
     UniverseModalService

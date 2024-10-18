@@ -25,4 +25,9 @@ export class UniverseService {
 
     return firstValueFrom(obs);
   }
+
+  delete(id: number): Promise<void> {
+    const obs = this._httpClient.delete<void>(`api/universe/${id}`);
+    return firstValueFrom(obs);
+  }
 }

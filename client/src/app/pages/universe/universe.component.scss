@@ -1,3 +1,7 @@
-:host mat-table {
+:host ::ng-deep mat-table {
     width: 100%;
+
+    tr > td:last-child {
+        width: 600px;
+    }
 }

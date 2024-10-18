@@ -5,7 +5,6 @@ import { UniverseModalService } from './universe-modal';
 import { UniverseService } from '@services/universe';
 import { ModalService } from '@shared/modal';
 import { Universe } from '@entities/universe';
-import { M } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-universe',
@@ -49,6 +48,22 @@ export class UniverseComponent implements OnInit {
     this._changeDet.detectChanges();
 
     await this._universeModalServ.open(universe);
+    this.ngOnInit();
+  }
+
+  async deleteUniverse(universe: Universe): Promise<void> {
+    const confirm = await this._modalServ.openConfirm(
+      `Are you sure about delete the universe "${universe.name}"?`
+    );
+
+    if (!confirm) {
+      return;
+    }
+
+    this.loading = true;
+    this._changeDet.detectChanges();
+
+    await this._universeServ.delete(universe.id);
     this.ngOnInit();
   }
 }
