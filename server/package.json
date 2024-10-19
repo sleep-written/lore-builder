@@ -5,10 +5,10 @@
         "nodemon": "npx nodemon --exec \"bb-path-alias start ./src/index.ts\"",
         "typeorm": "node --import @bleed-believer/path-alias ./node_modules/typeorm/cli.js",
         "setup": "bb-path-alias start ./src/setup.ts",
-        "start": "bb-path-alias start ./src/index.js",
+        "start": "bb-path-alias start ./src/index.ts",
         "check": "tsc --noEmit",
         "clean": "rm -rf ./dist",
-        "build": "bb-path-alias build"
+        "build": "npm run clean && bb-path-alias build ./tsconfig.build.json"
     },
     "devDependencies": {
         "@types/express": "^5.0.0",
