@@ -1,0 +1,8 @@
+:host,
+:host > mat-card {
+    height: 100%;
+
+    > mat-card-content {
+        flex: 1;
+    }
+}
