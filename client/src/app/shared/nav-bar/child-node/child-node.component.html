@@ -1,12 +1,12 @@
 @if (this.path) {
     <a mat-button
     [routerLink]="this.path">
-        <ng-container [ngTemplateOutlet]="this.content">
+        <ng-container [ngTemplateOutlet]="content">
         </ng-container>
     </a>
 } @else {
     <button mat-button>
-        <ng-container [ngTemplateOutlet]="this.content">
+        <ng-container [ngTemplateOutlet]="content">
         </ng-container>
     </button>
 }
