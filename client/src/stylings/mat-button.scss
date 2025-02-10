@@ -1,6 +1,14 @@
 @use '@angular/material' as mat;
 @use './theme.scss' as *;
 
+.mdc-button,
+.mdc-icon-button {
+  display: inline-flex!important;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .mdc-button > span.mdc-button__label {
     & > *{
         margin-left: .5rem;

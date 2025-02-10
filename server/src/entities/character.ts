@@ -1,5 +1,6 @@
-import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, type Relation } from 'typeorm';
+import type { Relation } from 'typeorm';
 
+import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { EventDetail } from './event-detail.js';
 import { Universe } from './universe.js';
 import { Gender } from './gender.js';
