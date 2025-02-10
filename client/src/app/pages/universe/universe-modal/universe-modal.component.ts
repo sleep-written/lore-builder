@@ -8,10 +8,11 @@ import { Universe } from '@entities/universe';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-universe-modal',
-  templateUrl: './universe-modal.component.html',
-  styleUrl: './universe-modal.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-universe-modal',
+    templateUrl: './universe-modal.component.html',
+    styleUrl: './universe-modal.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UniverseModalComponent {
   private _universeServ = inject(UniverseService);

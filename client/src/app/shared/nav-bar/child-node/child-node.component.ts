@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-child-node',
-  templateUrl: './child-node.component.html',
-  styleUrl: './child-node.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-child-node',
+    templateUrl: './child-node.component.html',
+    styleUrl: './child-node.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ChildNodeComponent {
   @Input()

@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Menu } from '@entities/menu';
 
 @Component({
-  selector: 'app-nested-container',
-  templateUrl: './nested-container.component.html',
-  styleUrl: './nested-container.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-nested-container',
+    templateUrl: './nested-container.component.html',
+    styleUrl: './nested-container.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NestedContainerComponent {
   @Input()

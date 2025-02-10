@@ -6,8 +6,9 @@ import { MatGridTile } from '@angular/material/grid-list';
 import { ViewportEvent, ViewportSize } from './interfaces';
 
 @Directive({
-  // tslint:disable-next-line: directive-selector
-  selector: '[FlexGridTile]'
+    // tslint:disable-next-line: directive-selector
+    selector: '[FlexGridTile]',
+    standalone: false
 })
 export class FlexGridTileDirective implements OnInit, OnDestroy {
   // tslint:disable-next-line: variable-name

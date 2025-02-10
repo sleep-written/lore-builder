@@ -7,10 +7,11 @@ import { ModalService } from '@shared/modal';
 import { Universe } from '@entities/universe';
 
 @Component({
-  selector: 'app-universe',
-  templateUrl: './universe.component.html',
-  styleUrl: './universe.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-universe',
+    templateUrl: './universe.component.html',
+    styleUrl: './universe.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UniverseComponent implements OnInit {
   private _universeModalServ = inject(UniverseModalService);

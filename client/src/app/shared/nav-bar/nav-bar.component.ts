@@ -6,10 +6,11 @@ import { MenuService } from '@services/menu';
 import { Menu } from '@entities/menu';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-nav-bar',
+    templateUrl: './nav-bar.component.html',
+    styleUrl: './nav-bar.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NavBarComponent implements OnInit, OnDestroy {
   private _changeDet = inject(ChangeDetectorRef);
